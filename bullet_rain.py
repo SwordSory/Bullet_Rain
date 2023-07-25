@@ -59,7 +59,7 @@ while running:
                 pos = pygame.mouse.get_pos()
 
                 if play_button.collidepoint(pos) and event.button == 1 and main == "title_screen":
-                    score = -4
+                    score = 0
                     collision = 0
                     life1c = "Red"
                     life2c = "Red"
@@ -168,36 +168,34 @@ while running:
         if to1y == -100:
             to1s = random_speed_giver()
             to1x = to_x_giver()
-            score += 1
         to1y += to1s
         if to1y > 710:
             to1y = -100
+            score += 1
 
         if to2y == -100:
             to2s = random_speed_giver()
             to2x = to_x_giver()
-            score += 1
         to2y += to2s
         if to2y > 710:
             to2y = -100
+            score += 1
 
         if lox == -100:
             los = random_speed_giver()
             loy = random_y_giver()
-            score += 1
         lox += los
         if lox > 1728:
             lox = -100
+            score += 1
 
         if rox == 1728:
             ros = random_speed_giver()
             roy = random_y_giver()
-            score += 1
         rox -= ros
         if rox < -100:
             rox = 1728 
-
-
+            score += 1
 
         if br1c.colliderect(br1) or br1c.colliderect(br2) or br1c.colliderect(br3) or br1c.colliderect(to1) or br1c.colliderect(to2) or br1c.colliderect(lo) or br1c.colliderect(ro):
             collision += 1
@@ -211,7 +209,6 @@ while running:
                 life2c = (50, 50, 50)
                 life1c = (50, 50, 50)
             blue_player_x, blue_player_y = 864, 650
-            score -= 4
             to1y = -100
             to2y = -100
             lox = -100
