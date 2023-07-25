@@ -2,7 +2,7 @@
 
 A silly game made.[Still Updating]
 
-In this game bullets come from top and the sides and you as a player have to dodge then. You get three lievs.
+In this game bullets come from top and the sides and you as the player have to dodge then. You get three lievs.
 
 
 -[Score Bug] Patched
