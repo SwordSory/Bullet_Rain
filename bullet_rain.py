@@ -59,7 +59,7 @@ while running:
                 pos = pygame.mouse.get_pos()
 
                 if play_button.collidepoint(pos) and event.button == 1 and main == "title_screen":
-                    score = 0
+                    score = -4
                     collision = 0
                     life1c = "Red"
                     life2c = "Red"
@@ -211,6 +211,7 @@ while running:
                 life2c = (50, 50, 50)
                 life1c = (50, 50, 50)
             blue_player_x, blue_player_y = 864, 650
+            score -= 4
             to1y = -100
             to2y = -100
             lox = -100
