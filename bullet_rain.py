@@ -14,7 +14,7 @@ clock = pygame.time.Clock()
 
 
 def random_speed_giver():
-    random_speed = random.randint(10, 20)
+    random_speed = random.randint(5, 25)
     return random_speed
 
 def to_x_giver():
