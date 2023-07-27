@@ -7,7 +7,7 @@ In this game bullets come from top and the sides and you as the player have to d
 
 -[Score Bug] Patched
 
--[Speed Range] Increased +- 100%
+-[Speed Range] Increased ± 100%
 
 -[Player Size] Increased 33%
 
