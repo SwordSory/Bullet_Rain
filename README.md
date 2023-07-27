@@ -1,4 +1,4 @@
-# Bullet_Rain
+# Bullet_Rain(0.15)
 
 A silly game made.[Still Updating]
 
