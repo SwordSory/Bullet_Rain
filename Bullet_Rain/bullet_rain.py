@@ -52,6 +52,8 @@ collision = 0
 
 blue_player_x, blue_player_y = 864, 630
 br1c = pygame.Rect(blue_player_x - 60, blue_player_y - 60, 120, 120)
+ball = pygame.image.load(assects_pather("assects/ball.png"))
+ball = pygame.transform.scale(ball, (160, 160))
 
 
 keys = {}
@@ -148,7 +150,7 @@ while running:
         screen.blit(font.render(str(score), True, "Black"), (250, 790))
 
 
-        pygame.draw.circle(screen, "Blue", (blue_player_x, blue_player_y), 80)
+        screen.blit(ball, (blue_player_x - 80, blue_player_y - 80))
         br1c = pygame.Rect(blue_player_x - 60, blue_player_y - 60, 120, 120)
 
 
