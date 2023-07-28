@@ -168,11 +168,11 @@ while running:
         if keys.get(pygame.K_LSHIFT) and keys.get(pygame.K_a):
             blue_player_x -= 15
         if keys.get(pygame.K_LCTRL) and keys.get(pygame.K_a):
-            blue_player_x += 15
+            blue_player_x += 5
         if keys.get(pygame.K_LSHIFT) and keys.get(pygame.K_d):
             blue_player_x += 15
         if keys.get(pygame.K_LCTRL) and keys.get(pygame.K_d):
-            blue_player_x -= 15
+            blue_player_x -= 5
         if blue_player_y > 630:
             blue_player_y = 630
 
