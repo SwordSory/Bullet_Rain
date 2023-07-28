@@ -14,3 +14,5 @@ In this game bullets come from top and the sides and you as the player have to d
 -[Hitbox] Decreased 2.5%
 
 -[Bullet Textures] Added
+
+-[Ball Texture] Added
