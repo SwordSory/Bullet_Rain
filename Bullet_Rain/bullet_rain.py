@@ -50,10 +50,13 @@ life2c = "Red"
 life3c = "Red"
 collision = 0
 
-blue_player_x, blue_player_y = 864, 630
+blue_player_x, blue_player_y = 864, 635
 br1c = pygame.Rect(blue_player_x - 60, blue_player_y - 60, 120, 120)
 ball = pygame.image.load(assects_pather("assects/ball.png"))
 ball = pygame.transform.scale(ball, (160, 160))
+
+p_resume = pygame.Rect(634, 750, 460, 95)
+p_home = pygame.Rect(634, 855, 460, 95)
 
 
 keys = {}
@@ -79,7 +82,19 @@ while running:
                     life3c = "Red"
                     main = "game"
 
+                if p_resume.collidepoint(pos) and event.button == 1 and main == "pause":
+                    main = "game"
+
+                if p_home.collidepoint(pos) and event.button == 1 and main == "pause":
+                    main = "title_screen"
+
+
             if event.type == pygame.KEYDOWN:
+                if event.key == K_ESCAPE and main == "game":
+                    main = "pause"
+                elif event.key == K_ESCAPE and main == "pause":
+                    main = "game"                    
+
                 keys[event.key] = True
             if event.type == pygame.KEYUP:
                 keys[event.key] = False
@@ -109,6 +124,48 @@ while running:
         screen.blit(font.render("Latest Score:", True, "Black"), (30, 110))
         screen.blit(font.render(str(score), True, "Black"), (475, 110))
 
+
+
+
+
+    elif main == "pause":
+        screen.fill((135, 206, 235))
+        pygame.draw.rect(screen, (101, 67, 33), (0, 920, 1728, 52), 100)
+        pygame.draw.rect(screen, (139, 69, 19), (0, 850, 1728, 70), 100)
+        pygame.draw.rect(screen, (205, 133, 63), (0, 730, 1728, 120), 100)
+        pygame.draw.rect(screen, (124, 252, 0), (0, 710, 1728, 20), 100)
+
+
+        screen.blit(font.render("Lives:", True, "Black"), (1200, 790))
+        pygame.draw.circle(screen, life1c, (1460, 805), 40)
+        pygame.draw.circle(screen, life2c, (1560, 805), 40)
+        pygame.draw.circle(screen, life3c, (1660, 805), 40)
+
+
+        screen.blit(font.render("Score:", True, "Black"), (30, 790))
+        screen.blit(font.render(str(score), True, "Black"), (250, 790))
+
+
+        screen.blit(tb, ( to1x- 35, to1y- 22))
+        screen.blit(tb, ( to2x- 35, to2y- 25))
+        screen.blit(lb, ( lox- 22, loy- 35))
+        screen.blit(rb, ( rox- 22, roy- 35))
+
+
+        screen.blit(ball, (blue_player_x - 80, blue_player_y - 80))
+
+
+        pygame.draw.rect(screen, (50, 50, 50), (600, 730, 528, 242))
+        pygame.draw.rect(screen, "Black", (600, 730, 528, 242), 10)
+
+
+        pygame.draw.rect(screen, "Black", p_resume)
+        pygame.draw.rect(screen, "Blue", p_resume, 10)
+        screen.blit(font.render("resume[esc]", True, "White"), (659, 765))
+
+        pygame.draw.rect(screen, "Black", p_home)
+        pygame.draw.rect(screen, "Red", p_home, 10)
+        screen.blit(font.render("home screen", True, "White"), (649, 870))
 
 
     elif main == "game":
@@ -142,9 +199,9 @@ while running:
         pygame.draw.rect(screen, (124, 252, 0), (0, 710, 1728, 20), 100)
 
         screen.blit(font.render("Lives:", True, "Black"), (1200, 790))
-        pygame.draw.circle(screen, life1c, (1460, 810), 40)
-        pygame.draw.circle(screen, life2c, (1560, 810), 40)
-        pygame.draw.circle(screen, life3c, (1660, 810), 40)
+        pygame.draw.circle(screen, life1c, (1460, 805), 40)
+        pygame.draw.circle(screen, life2c, (1560, 805), 40)
+        pygame.draw.circle(screen, life3c, (1660, 805), 40)
 
         screen.blit(font.render("Score:", True, "Black"), (30, 790))
         screen.blit(font.render(str(score), True, "Black"), (250, 790))
@@ -158,7 +215,7 @@ while running:
             blue_player_x += 10
         if keys.get(pygame.K_a):
             blue_player_x -= 10
-        if keys.get(pygame.K_s) and blue_player_y < 650:
+        if keys.get(pygame.K_s) and blue_player_y < 635:
             blue_player_y += 15
         if keys.get(pygame.K_w):
             blue_player_y -= 10
@@ -173,8 +230,8 @@ while running:
             blue_player_x += 15
         if keys.get(pygame.K_LCTRL) and keys.get(pygame.K_d):
             blue_player_x -= 5
-        if blue_player_y > 630:
-            blue_player_y = 630
+        if blue_player_y > 635:
+            blue_player_y = 635
 
 
         if to1y == -100:
