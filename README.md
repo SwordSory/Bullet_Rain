@@ -1,4 +1,4 @@
-# Bullet_Rain(0.15)
+# Bullet_Rain(0.2)
 
 A silly game I made.[Still Updating]
 
@@ -16,3 +16,5 @@ In this game bullets come from top and the sides and you as the player have to d
 -[Bullet Textures] Added
 
 -[Ball Texture] Added
+
+-[Pause Functionality] Added
