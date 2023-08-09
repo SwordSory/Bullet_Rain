@@ -5,6 +5,10 @@ A silly game I made.[Still Updating]
 In this game bullets come from top and the sides and you as the player have to dodge then. You get three lievs. 
 
 
+"pip install -r requirements.txt" to install the dependencies
+
+
+
 _____________
 ↓↓↓↓↓↓↓↓↓↓↓↓↓
 
