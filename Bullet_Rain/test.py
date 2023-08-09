@@ -130,6 +130,14 @@ while running:
 
     elif main == "pause":
         screen.fill((135, 206, 235))
+
+
+        screen.blit(tb, ( to1x- width*35/1728, to1y- height*22/972))
+        screen.blit(tb, ( to2x- width*35/1728, to2y- height*22/972))
+        screen.blit(lb, ( lox- width*22/1728, loy- height*35/972))
+        screen.blit(rb, ( rox- width*22/1728, roy- height*35/972))
+
+
         pygame.draw.rect(screen, (124, 252, 0), (0, height-height*(131/486), width, height*(131/486)))
         pygame.draw.rect(screen, (205, 133, 63), (0, height-height*(121/486), width, height*(121/486)))
         pygame.draw.rect(screen, (139, 69, 19), (0, height-height*(61/486), width, height*(61/486)))
@@ -144,12 +152,6 @@ while running:
 
         screen.blit(font.render("Score:", True, "Black"), (width*30/1728, height*790/972))
         screen.blit(font.render(str(score), True, "Black"), (width*250/1728, height*790/972))
-
-
-        screen.blit(tb, ( to1x- width*35/1728, to1y- height*22/972))
-        screen.blit(tb, ( to2x- width*35/1728, to2y- height*22/972))
-        screen.blit(lb, ( lox- width*22/1728, loy- height*35/972))
-        screen.blit(rb, ( rox- width*22/1728, roy- height*35/972))
 
 
         screen.blit(ball, (blue_player_x - height*80/972, blue_player_y - height*80/972))
