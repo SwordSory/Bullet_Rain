@@ -249,7 +249,6 @@ while running:
                 r2 += 1
             if score/25 == int(score/25):
                 r1 += 1
-            print(r1, r2)
 
         if to2y == 0-height*100/972:
             to2s = random_speed_giver(r1, r2)
