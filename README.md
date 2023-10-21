@@ -27,3 +27,5 @@ _____________
 -[Ball Texture] Added
 
 -[Pause Functionality] Added
+
+-[Score And Speed] Updated
