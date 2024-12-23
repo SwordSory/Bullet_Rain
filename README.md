@@ -1,4 +1,4 @@
-# Bullet_Rain(0.2)
+# Bullet_Rain
 
 A silly game I made.[Still Updating]
 
