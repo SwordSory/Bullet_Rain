@@ -29,3 +29,5 @@ _____________
 -[Pause Functionality] Added
 
 -[Score And Speed] Updated
+
+-[HighScore Storing Functionality] Added
