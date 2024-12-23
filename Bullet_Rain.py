@@ -32,6 +32,22 @@ def assects_pather(filename):
     return (os.path.join(asfp, filename))
 
 
+class high_score:
+    file_path = assects_pather("assects/high_score.txt")
+    def read_high_score():
+        if not os.path.exists(high_score.file_path):
+            with open(high_score.file_path, "w") as file:
+                file.write(str(0))
+        with open(high_score.file_path, "r") as file:
+            return int(file.read().strip())
+            
+    def write_high_score(h_score):
+        with open(high_score.file_path, "w") as file:
+            file.write(str(h_score))
+
+
+
+    
 main = "title_screen"
 play_button = pygame.Rect(width-width*(499/864), height-height*(52/81), width*(67/432), height*(1/10))
 to1y, to1x = 0-int(height*25/243), 300
@@ -45,7 +61,7 @@ roy, rox = 500, width
 rb = pygame.image.load(assects_pather("assects/rb.png"))
 rb = pygame.transform.scale(rb, (width*25/288,height*25/243))
 score = 0
-h_score = 0
+h_score = high_score.read_high_score()
 life1c = "Red"
 life2c = "Red"
 life3c = "Red"
@@ -305,7 +321,8 @@ while running:
             lox = 0-width*100/1728
             rox = width
             if score > h_score:
-                h_score = score
+                high_score.write_high_score(score)
+                h_score = high_score.read_high_score()
             if collision == 3:
                 r1, r2 = 5, 20
                 main = "title_screen"
